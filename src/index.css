@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --color-navy-950: #080b26;
+    --color-navy-900: #0b0f2e;
+    --color-navy-800: #12163a;
+    --color-navy-700: #1a1f45;
+    --color-navy-600: #252b55;
+    --color-gold: #d4af37;
+    --color-gold-light: #e8c468;
+    --color-cream: #f5f3ec;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #080b26;
+    color: #f5f3ec;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080b26;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a1f45;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+  }
+}
+
+@layer utilities {
+  .h-fill {
+    height: 100svh;
+  }
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Leaflet Map Customization for Dark Aesthetic */
+.leaflet-container {
+  background: #0d0f1f !important;
+  font-family: inherit;
+}
+.leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3);
+}
+.leaflet-popup-content-wrapper {
+  background: #0b0f2e !important;
+  color: #f5f3ec !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+.leaflet-popup-tip {
+  background: #0b0f2e !important;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+}
